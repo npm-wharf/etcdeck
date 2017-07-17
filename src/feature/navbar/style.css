@@ -1,0 +1,21 @@
+.navbar {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.menu-image {
+  height: 36px;
+  padding-right: .5em;
+  padding-bottom: 0em;
+  margin-bottom: 0em;
+}
+
+.text-link {
+  height: 58px;
+  top: 0em;
+}
+
+.text-link > i {
+  position: relative;
+  top: .15em;
+}

@@ -1,0 +1,16 @@
+.horizontal-list {
+  width: 10em;
+  height: 100%;
+}
+
+.shadow-right {
+  box-shadow: 0px 0px 10px rgba(255,255,255,0.5);
+}
+
+.nav-pills a {
+  font-size: 1.5em;
+}
+
+.nav-pills li.active a {
+  background-color: #595;
+}

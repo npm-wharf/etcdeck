@@ -1,0 +1,35 @@
+.field {
+  display: inline-block;
+  /*outline: 1px solid #ddd;*/
+  border-radius: 8px;
+  border: 0px solid #5A5;
+  background-color: #eff9ef;
+  padding: .8em;
+  margin-left: 1px;
+  margin-top: 1px;
+}
+
+.field input {
+  border: none;
+  display: inline-block;
+  background-color: #fff;
+  padding: .2em .6em;
+  border-radius: 5px;
+  font-size: 1.5em;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.field-label {
+  letter-spacing: 0.07em;
+  color: #5A5;
+  display: block;
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.field-toggle {
+  margin-top: 0;
+  top: -2px;
+  bottom: 0px;
+  position: relative;
+}

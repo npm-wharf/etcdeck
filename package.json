@@ -1,0 +1,64 @@
+{
+  "name": "etcdeck",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:8008",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "compression": "^1.7.0",
+    "cookie-parser": "^1.4.3",
+    "deftly": "1.1.x",
+    "deftly-express": "1.1.x",
+    "express": "^4.15.3",
+    "fauxdash": "1.1.x",
+    "font-awesome": "^4.7.0",
+    "fount": "^1.1.3",
+    "history": "^4.6.3",
+    "lodash": "^4.17.4",
+    "node-etcd": "^5.1.0",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.1",
+    "react-contenteditable": "^2.0.4",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-scripts": "1.0.10",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "request": "^2.81.0",
+    "socket.io": "^2.0.3",
+    "uuid": "^3.1.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "server-tests": "node_modules/mocha/bin/mocha spec/url_spec.js",
+    "demo": "node ./demo.js"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^2.13.1",
+    "filewatcher": "^3.0.1",
+    "font-awesome-loader": "^1.0.2",
+    "mocha": "^3.4.2",
+    "mocha-lcov-reporter": "^1.3.0",
+    "node-sass": "^4.5.3",
+    "nyc": "^11.0.3",
+    "processhost": "^0.2.3",
+    "react-addons-test-utils": "^15.6.0",
+    "sass-loader": "^6.0.6",
+    "standard": "^10.0.2",
+    "standard-version": "^4.2.0"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  }
+}
