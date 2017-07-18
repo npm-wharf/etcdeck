@@ -1,6 +1,7 @@
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const compression = require('compression')
+const express = require('express')
 const path = require('path')
 const info = require('../package.json')
 
@@ -21,9 +22,10 @@ function postRouting (state) {
   // this exists to get around browser behavior related to browserHistory
   // need to add a check to this so it only applies in situations where
   // a user agent is making the request
-  state.express.get('*', function (req, res) {
-    res.sendFile(path.resolve('./public/index.html'))
-  })
+  state.express.use('/', express.static('./build'))
+  // state.express.get('*', function (req, res) {
+  //   res.sendFile(path.resolve('./public/index.html'))
+  // })
 }
 
 function infoHeaders (req, res, next) {

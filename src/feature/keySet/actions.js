@@ -1,23 +1,37 @@
-import { setKey } from './api'
+import { setKey, removeKey } from './api'
 
-export function changeKeyDisplayCommand(prefix, key, value) {
-  return function changeDisplay(dispatch) {
-    console.log(`change ${prefix}/${key} to ${value}`)
+export function changeKeyDisplayCommand (prefix, key, value) {
+  return function changeDisplay (dispatch) {
     dispatch(keySet(prefix, key, value))
   }
 }
 
-export function setKeyCommand(prefix, key, value) {
-  return function sendSetKey(dispatch) {
+export function deleteKeyCommand (prefix, key) {
+  return function sendSetKey (dispatch) {
+    removeKey(prefix, key)
+      .then(x => {
+        if (x) {
+          dispatch(keyDeleted(prefix, key))
+        }
+      })
+  }
+}
+
+export function setKeyCommand (prefix, key, value) {
+  return function sendSetKey (dispatch) {
     setKey(prefix, key, value)
       .then(x => {
         if (x) {
           dispatch(keySet(prefix, key, value))
         }
       })
-  } 
+  }
 }
 
-function keySet(prefix, key, value) {
- return { type: 'keySet', prefix: prefix, key: key, value: value } 
+function keyDeleted (prefix, key) {
+  return { type: 'keyDeleted', prefix: prefix, key: key }
+}
+
+function keySet (prefix, key, value) {
+  return { type: 'keySet', prefix: prefix, key: key, value: value }
 }

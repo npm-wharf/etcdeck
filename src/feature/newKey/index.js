@@ -1,64 +1,86 @@
 import React from 'react'
 import './style.css'
 import { connect } from 'react-redux'
-import { changePrefix, clearPrefix, addPrefix } from './actions'
+import { addKeyValue, changeName, changeValue, clearNewKey } from './actions'
 
-const NewPrefixView = ( { prefix, canAdd, change, clear, add } ) => {
-  let inputControl
-  return (<div className="field">
-      <label className="field-label" htmlFor="prefix">Prefix</label>
+const NewKeyView = ({ name, value, location, canAdd, changeName, changeValue, clear, add }) => {
+  let nameControl
+  let valueControl
+  const minWidth = 6
+  const nameCount = name.toString().length
+  const valueCount = value.toString().length
+  const nameWidth = nameCount < minWidth ? minWidth : nameCount
+  const valueWidth = valueCount < minWidth ? minWidth : valueCount
+  const prefix = location.pathname.split('/')[2]
+  return (<div className='field'>
+    <section className='field-set'>
+      <label className='field-label' htmlFor='prefix'>key name</label>
       <input
-        className="small-field"
-        ref={ x => inputControl = x }
-        size="13"
-        value={prefix}
+        ref={x => { nameControl = x }}
+        size={nameWidth}
+        value={name}
         onChange={
-          (e) => change(e.target.value)
+          (e) => changeName(e.target.value)
         }
       />
-      <div className="field-buttons">
-        <button
-          className="btn btn-default btn-sm"
-          disabled={!canAdd}
-          onClick={
-            (e) => {
-              e.preventDefault()
-              add(inputControl.value)
-            }
+    </section>
+    <section className='field-set'>
+      <label className='field-label' htmlFor='prefix'>key value</label>
+      <input
+        ref={x => { valueControl = x }}
+        size={valueWidth}
+        value={value}
+        onChange={
+          (e) => changeValue(e.target.value)
+        }
+      />
+    </section>
+    <div className='field-buttons'>
+      <button
+        className='btn btn-default btn-sm'
+        disabled={!canAdd}
+        onClick={
+          (e) => {
+            e.preventDefault()
+            add(prefix, nameControl.value, valueControl.value)
           }
-        >add</button>
-        <button
-          className="btn btn-default btn-sm"
-          disabled={!canAdd}
-          onClick={
-            (e) => {
-              e.preventDefault()
-              clear()
-            }
+        }
+      >add</button>
+      <button
+        className='btn btn-default btn-sm'
+        disabled={!canAdd}
+        onClick={
+          (e) => {
+            e.preventDefault()
+            clear()
           }
-        >reset</button>
-      </div>
+        }
+      >reset</button>
+    </div>
   </div>)
 }
 
-const mapStateToProps = ( state, ownProps ) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    prefix: state.newPrefix.prefix,
-    canAdd: state.newPrefix.canAdd
+    name: state.newKey.name,
+    value: state.newKey.value,
+    canAdd: state.newKey.canAdd,
+    location: state.routing.location
   }
 }
 
-const mapDispatchToProps = ( dispatch ) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    add: (prefix) => dispatch(addPrefix(prefix)),
-    change: (prefix) => dispatch(changePrefix(prefix)),
-    clear: () => dispatch(clearPrefix())
+    add: (prefix, name, value) => dispatch(addKeyValue(prefix, name, value)),
+    changeName: (name) => dispatch(changeName(name)),
+    changeValue: (value) => dispatch(changeValue(value)),
+    clear: () => dispatch(clearNewKey())
   }
 }
 
-const NewPrefix = connect(
+const NewKey = connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewPrefixView)
+)(NewKeyView)
 
-export default NewPrefix
+export default NewKey

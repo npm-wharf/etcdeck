@@ -1,14 +1,15 @@
-export function createPrefix(prefix) {
-  return fetch(`/api/key/${prefix}`, {
+export function addKey (prefix, name, value) {
+  return fetch(`/api/key/${prefix}/${name}`, {
     method: 'put',
     headers: {
       'content-type': 'text/plain'
     },
-    body: ''
+    body: value
   })
   .then(
     resp => {
-      if( resp.status === 200 ) {
+      console.log(resp)
+      if (resp.status >= 200 < 300) {
         return true
       } else {
         return false

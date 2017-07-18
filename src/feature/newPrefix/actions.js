@@ -1,11 +1,11 @@
 import { createPrefix } from './api'
 
 export function addPrefix (prefix) {
-  return function(dispatch) {
+  return function (dispatch) {
     createPrefix(prefix)
       .then(
         x => {
-            if(x) {
+          if (x) {
             dispatch(getAddition(prefix))
             dispatch(getClear())
           }
@@ -30,6 +30,6 @@ function getAddition (prefix) {
   return { type: 'prefixAdded', prefix: prefix }
 }
 
-function getClear() {
+function getClear () {
   return { type: 'prefixChanged', prefix: '' }
 }

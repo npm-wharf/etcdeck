@@ -10,12 +10,28 @@
   margin-bottom: 0em;
 }
 
+.image-link {
+  height: 60px;
+}
+
 .text-link {
-  height: 58px;
-  top: 0em;
+  height: 60px;
+  top: 2em;
 }
 
 .text-link > i {
   position: relative;
   top: .15em;
+}
+
+.nav-tabs li a {
+  color: #028
+}
+
+.nav-tabs li.active a:hover {
+  background-color: #99c;
+}
+
+.nav-tabs li.active a {
+  background-color: #028;
 }

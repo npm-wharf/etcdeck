@@ -4,7 +4,7 @@ import NotificationView from '../../components/notification.jsx'
 import { dismissNotification } from '../../app/actions'
 
 const mapStateToProps = (state) => {
-  let user = state.auth.user;
+  let user = state.auth.user
   return {
     userName: user ? user.displayName : '',
     messages: state.notifications.messages

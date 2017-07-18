@@ -1,5 +1,5 @@
 
-export function getPrefixes() {
+export function getPrefixes () {
   return fetch('/api/key', {
     method: 'get',
     headers: {
@@ -8,7 +8,7 @@ export function getPrefixes() {
   })
   .then(
     resp => {
-      if( resp.status === 200 ) {
+      if (resp.status === 200) {
         return resp
           .json()
           .then(list => list.map(x => /^[/]/.test(x) ? x.slice(1) : x))
@@ -19,7 +19,7 @@ export function getPrefixes() {
   )
 }
 
-export function getPrefixKeys(prefix) {
+export function getPrefixKeys (prefix) {
   return fetch(`/api/key/${prefix}`, {
     method: 'get',
     headers: {
@@ -28,7 +28,7 @@ export function getPrefixKeys(prefix) {
   })
   .then(
     resp => {
-      if( resp.status === 200 ) {
+      if (resp.status === 200) {
         return resp.json()
       } else {
         return undefined

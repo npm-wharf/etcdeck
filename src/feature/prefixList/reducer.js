@@ -6,7 +6,7 @@ const initialState = {
 }
 
 const actions = {
-  prefixAdded: (state, { prefix })=> {
+  prefixAdded: (state, { prefix }) => {
     const prefixes = state.list.slice()
     prefixes.push(prefix)
     return assign({}, state, { list: prefixes })
@@ -20,13 +20,13 @@ const actions = {
     const prefixes = _.without(state.list.slice(), prefix)
     return assign({}, state, { list: prefixes })
   }
-};
+}
 
-export default function reducer( state = initialState, action ) {
-  let fn = actions[ action.type ];
-  if( fn ) {
-    return fn( state, action );
+export default function reducer (state = initialState, action) {
+  let fn = actions[ action.type ]
+  if (fn) {
+    return fn(state, action)
   } else {
-    return state;
+    return state
   }
 }

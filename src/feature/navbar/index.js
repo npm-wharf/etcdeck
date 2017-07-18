@@ -1,26 +1,32 @@
-import "./style.css";
-import React from "react";
-import { Link } from "react-router-dom";
+import './style.css'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <div className="navbar">
-      <ul className="nav nav-tabs">
-        <li role="presentation">
-          <Link to="/">
-            <img className="menu-image" src="/images/etcd.png" />
-            Main
+    <div className='navbar'>
+      <ul className='nav nav-tabs'>
+        <li role='presentation'>
+          <Link to='/' className='image-link nav-link'>
+            <img className='menu-image' src='/images/etcd.png' />
+            Keys
           </Link>
         </li>
-        <li role="presentation">
-          <Link to="/about" className="text-link">
-            <i className="fa fa-question fa-2x">&nbsp;</i>
+        <li role='presentation'>
+          <Link to='/add-prefix' className='text-link nav-link'>
+            <i className='fa fa-plus fa-2x'>&nbsp;</i>
+            Add Prefix
+          </Link>
+        </li>
+        <li role='presentation'>
+          <Link to='/about' className='text-link  nav-link'>
+            <i className='fa fa-question fa-2x'>&nbsp;</i>
             About This Project
           </Link>
         </li>
       </ul>
-    </div> 
-  );
+    </div>
+  )
 }
 
-export default NavBar;
+export default NavBar

@@ -1,12 +1,12 @@
-import { createPrefix } from './api'
+import { addKey } from './api'
 
-export function addPrefix (prefix) {
-  return function(dispatch) {
-    createPrefix(prefix)
+export function addKeyValue (prefix, name, value) {
+  return function (dispatch) {
+    addKey(prefix, name, value)
       .then(
         x => {
-            if(x) {
-            dispatch(getAddition(prefix))
+          if (x) {
+            dispatch(getAddition(prefix, name, value))
             dispatch(getClear())
           }
         }
@@ -14,22 +14,28 @@ export function addPrefix (prefix) {
   }
 }
 
-export function changePrefix (prefix) {
+export function changeName (name) {
   return function (dispatch) {
-    dispatch({ type: 'prefixChanged', prefix: prefix })
+    dispatch({ type: 'nameChanged', name: name })
   }
 }
 
-export function clearPrefix () {
+export function changeValue (value) {
+  return function (dispatch) {
+    dispatch({ type: 'valueChanged', value: value })
+  }
+}
+
+export function clearNewKey () {
   return function (dispatch) {
     dispatch(getClear())
   }
 }
 
-function getAddition (prefix) {
-  return { type: 'prefixAdded', prefix: prefix }
+function getAddition (prefix, name, value) {
+  return { type: 'keySet', prefix: prefix, key: name, value: value }
 }
 
-function getClear() {
-  return { type: 'prefixChanged', prefix: '' }
+function getClear () {
+  return { type: 'newKeyCleared' }
 }

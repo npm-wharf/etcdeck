@@ -5,42 +5,40 @@ import './style.css'
 import { connect } from 'react-redux'
 import PrefixList from '../prefixList'
 import KeySet from '../keySet'
+import NewPrefix from '../newPrefix'
 import { Route, Switch } from 'react-router-dom'
 
 // import Links from "../links/component";
 
-const MainView = ( {  } ) => {
+const MainView = () => {
   return (
-    <div className="main-container">
-      <div className="row">
-        <div className="col-xs-4 col-sm-2 col-md-2 col-lg-1">
-          <PrefixList />
-        </div>
-        <div className="col-xs-8 col-sm-10 col-md-10 col-lg-11">
-          <Switch>
-            <Route path="/prefix" component={KeySet} />
-          </Switch>
-        </div>
+    <div className='main-container row'>
+      <div className='col-xs-4 col-sm-3 col-md-3 col-lg-2'>
+        <PrefixList />
+      </div>
+      <div className='col-xs-8 col-sm-9 col-md-9 col-lg-10'>
+        <Switch>
+          <Route path='/add-prefix' component={NewPrefix} />
+          <Route path='/prefix' component={KeySet} />            
+        </Switch>
       </div>
     </div>
-  );
+  )
 }
 
-const mapStateToProps = ( state, ownProps ) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    
   }
 }
 
-const mapDispatchToProps = ( dispatch ) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    
   }
 }
 
 const Main = connect(
   mapStateToProps,
   mapDispatchToProps
-)( MainView );
+)(MainView)
 
-export default Main;
+export default Main

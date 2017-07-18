@@ -17,7 +17,7 @@ module.exports = function (fount, express) {
       }
     },
     etcd: {
-      url: 'http://localhost:2379'
+      url: process.env.ETCD_URL || 'http://localhost:2379'
     }
   }
 }

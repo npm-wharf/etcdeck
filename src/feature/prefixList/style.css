@@ -1,6 +1,8 @@
 .horizontal-list {
   width: 10em;
-  height: 100%;
+  background-color: #fafafd;
+  border-right: 1px solid #aae;
+  overflow: hidden;
 }
 
 .shadow-right {
@@ -8,9 +10,19 @@
 }
 
 .nav-pills a {
-  font-size: 1.5em;
+  font-size: 1.2em;
+}
+
+.nav-pills li a {
+	color: #028
+}
+
+.nav-pills li.active a:hover {
+  background-color: #99c;
+  color: #fff
 }
 
 .nav-pills li.active a {
-  background-color: #595;
+  background-color: #028;
+  color: #fff
 }

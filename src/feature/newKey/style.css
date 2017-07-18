@@ -1,17 +1,8 @@
-.field input.small-field {
-  font-size: 1em;
-}
-
-.field-buttons {
-  width: 100%;
+.field-set {
   display: inline-block;
-  text-align: right;
+  margin: 0 .5em .5em 0;
 }
 
 .field button {
   margin: .2em .5em 0 0;
-}
-
-.right {
-  margin: .2em 0 0 0;
 }

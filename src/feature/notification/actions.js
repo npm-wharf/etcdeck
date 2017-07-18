@@ -1,5 +1,5 @@
-const assign = Object.assign
 import uuid from 'uuid'
+const assign = Object.assign
 
 const notificationDefaults = {
   dismissable: true,
@@ -22,13 +22,13 @@ export function dismissNotification (id) {
 
 export function notify (notification) {
   let message = assign({ id: uuid.v4() }, notificationDefaults, notification)
-  return function send(dispatch) {
-    dispatch({ type: "notify", message: message })
+  return function send (dispatch) {
+    dispatch({ type: 'notify', message: message })
     if (message.duration && message.duration > 0) {
       setTimeout(() => {
-        dispatch({ type: "dismiss", id: message.id })
+        dispatch({ type: 'dismiss', id: message.id })
         setTimeout(() => {
-          dispatch(dismissNotification( message.id ))
+          dispatch(dismissNotification(message.id))
         }, 500)
       }, message.duration)
     }

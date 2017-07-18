@@ -3,15 +3,12 @@
 }
 
 .field-buttons {
-  width: 100%;
-  display: inline-block;
+  margin-right: 0;
+  padding-right: 0;
+  display: block;
   text-align: right;
 }
 
 .field button {
-  margin: .2em .5em 0 0;
-}
-
-.right {
-  margin: .2em 0 0 0;
+  margin: .2em 0 0 0.5em;
 }

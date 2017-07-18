@@ -1,0 +1,6 @@
+app = "etcdeck"
+description =  "etcdeck"
+start =  "node server/"
+
+[environment]
+    ETCD_URL="{{etcd_url}}"

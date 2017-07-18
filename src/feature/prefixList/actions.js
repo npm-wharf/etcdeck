@@ -1,4 +1,3 @@
-
 import { getPrefixes, getPrefixKeys } from './api'
 
 export function getKeySet (prefix) {
@@ -13,7 +12,7 @@ export function getKeySet (prefix) {
 export function listPrefixes () {
   return function getPrefixList (dispatch) {
     return getPrefixes()
-      .then( 
+      .then(
         list => dispatch(prefixesListed(list))
       )
   }
@@ -23,6 +22,6 @@ function keySetFetched (prefix, set) {
   return { type: 'keySetFetched', prefix: prefix, keySet: set }
 }
 
-function prefixesListed( list ) {
+function prefixesListed (list) {
   return { type: 'prefixesListed', prefixes: list }
 }

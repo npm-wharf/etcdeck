@@ -1,5 +1,5 @@
-const assign = Object.assign
 import _ from 'lodash'
+const assign = Object.assign
 
 const initialState = {
   messages: []
@@ -15,10 +15,10 @@ const actions = {
     let messages = state.messages.slice()
     let message = _.find(messages, { id: id })
     if (message) {
-      message.fadeDirection='fade-out'
+      message.fadeDirection = 'fade-out'
       return assign({}, state, { messages })
     }
-    return state;
+    return state
   },
   dismissed: (state, { id }) => {
     let messages = state.messages.slice()
@@ -27,10 +27,10 @@ const actions = {
   }
 }
 
-export default function reducer(state = initialState, action) {
+export default function reducer (state = initialState, action) {
   let fn = actions[ action.type ]
-  if( fn ) {
-    return fn( state, action )
+  if (fn) {
+    return fn(state, action)
   } else {
     return state
   }

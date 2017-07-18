@@ -13,7 +13,7 @@ class App extends Component {
           <h2>etcdeck</h2>
         </div>
         <NavBar />
-        <div className="App-main">
+        <div className="App-main container-fluid">
           <Switch>
             <Route exact path="/about" component={About} />
             <Route path="/" component={Main} />

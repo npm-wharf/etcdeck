@@ -2,8 +2,8 @@
   display: inline-block;
   /*outline: 1px solid #ddd;*/
   border-radius: 8px;
-  border: 0px solid #5A5;
-  background-color: #eff9ef;
+  border: 1px solid #cce;
+  background-color: #fafafd;
   padding: .8em;
   margin-left: 1px;
   margin-top: 1px;
@@ -13,6 +13,7 @@
   border: none;
   display: inline-block;
   background-color: #fff;
+  border: 1px solid #028;
   padding: .2em .6em;
   border-radius: 5px;
   font-size: 1.5em;
@@ -21,10 +22,25 @@
 
 .field-label {
   letter-spacing: 0.07em;
-  color: #5A5;
+  color: #028;
   display: block;
   margin: 0;
   font-size: 1.2em;
+}
+
+.delete {
+  float: right;
+  color: #aaaaba;
+  margin: -.35em -.35em 0 0;
+  padding: 0;
+}
+
+.delete:hover {
+  color: #6666fa;
+}
+
+.delete:active {
+  color: #028;
 }
 
 .field-toggle {
