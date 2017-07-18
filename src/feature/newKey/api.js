@@ -9,7 +9,7 @@ export function addKey (prefix, name, value) {
   .then(
     resp => {
       console.log(resp)
-      if (resp.status >= 200 < 300) {
+      if (resp.status >= 200 && resp.status < 300) {
         return true
       } else {
         return false

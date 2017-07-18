@@ -21,7 +21,7 @@ const KeySetView = ({ sets, location, deleteKey, changeKeyDisplay, updateKey }) 
     />)
   })
   return (
-    <div className=''>
+    <div className='key-sets'>
       <NewKey />
       <hr />
       {list}

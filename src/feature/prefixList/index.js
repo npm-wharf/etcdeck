@@ -12,7 +12,9 @@ const PrefixListView = ({ prefixes, location, history, getList, getKeys }) => {
   }
   history.listen((location, action) => {
     const prefix = location.pathname.split('/')[2]
-    handle(getKeys, prefix)
+    if (prefix) {
+      handle(getKeys, prefix)
+    }
   })
   const list = prefixes.map(prefix =>
     <Prefix name={prefix} location={location} key={prefix} />

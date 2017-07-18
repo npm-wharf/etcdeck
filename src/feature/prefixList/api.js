@@ -11,7 +11,7 @@ export function getPrefixes () {
       if (resp.status === 200) {
         return resp
           .json()
-          .then(list => list.map(x => /^[/]/.test(x) ? x.slice(1) : x))
+          .then(list => (list.map(x => /^[/]/.test(x) ? x.slice(1) : x)).sort())
       } else {
         return undefined
       }

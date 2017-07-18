@@ -1,5 +1,5 @@
 
-export function getPrefixKeys(prefix) {
+export function getPrefixKeys (prefix) {
   return fetch(`api/key/${prefix}`, {
     method: 'get',
     headers: {
@@ -8,7 +8,7 @@ export function getPrefixKeys(prefix) {
   })
   .then(
     resp => {
-      if( resp.status === 200 ) {
+      if (resp.status === 200) {
         return resp.json()
       } else {
         return undefined

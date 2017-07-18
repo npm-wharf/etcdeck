@@ -26,8 +26,24 @@ function fetchConfig (client, prefix) {
     })
     .then((response) => {
       if (response.node.nodes) {
-        return response.node.nodes.reduce((acc, node) => {
-          acc[node.key.split('/')[2]] = node.value
+        const list = response.node.nodes.reduce((acc, node) => {
+          acc.push({ key: node.key.split('/')[2], value: node.value })
+          return acc
+        }, [])
+        console.log(list)
+        list.sort((a, b) => {
+          const A = a.key.toUpperCase()
+          const B = b.key.toUpperCase()
+          if (A < B) {
+            return -1
+          } else if (A > B) {
+            return 1
+          }
+          return 0
+        })
+        console.log(list)
+        return list.reduce((acc, x) => {
+          acc[x.key] = x.value
           return acc
         }, {})
       } else {

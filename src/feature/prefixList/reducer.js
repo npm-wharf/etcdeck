@@ -13,7 +13,7 @@ const actions = {
   },
   prefixesListed: (state, { prefixes }) => {
     return assign({}, state, {
-      list: prefixes
+      list: prefixes || []
     })
   },
   prefixRemoved: (state, { prefix }) => {

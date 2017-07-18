@@ -1,4 +1,3 @@
-import _ from 'lodash'
 const assign = Object.assign
 
 const initialState = {

@@ -23,15 +23,15 @@
 .field-label {
   letter-spacing: 0.07em;
   color: #028;
-  display: block;
-  margin: 0;
+  display: inline-block;
+  margin: 0 .5em 0 0;
   font-size: 1.2em;
 }
 
 .delete {
   float: right;
   color: #aaaaba;
-  margin: -.35em -.35em 0 0;
+  margin: -.5em -.35em 0 .5em;
   padding: 0;
 }
 

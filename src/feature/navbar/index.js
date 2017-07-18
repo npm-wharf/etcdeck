@@ -8,7 +8,7 @@ const NavBar = () => {
       <ul className='nav nav-tabs'>
         <li role='presentation'>
           <Link to='/' className='image-link nav-link'>
-            <img className='menu-image' src='/images/etcd.png' />
+            <img className='menu-image' src='/images/etcd.png' alt='etcd' />
             Keys
           </Link>
         </li>

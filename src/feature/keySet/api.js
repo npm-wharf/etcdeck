@@ -8,7 +8,7 @@ export function setKey (prefix, name, value) {
   })
   .then(
     resp => {
-      if (resp.status >= 200 < 300) {
+      if (resp.status >= 200 && resp.status < 300) {
         return true
       } else {
         return false
@@ -26,7 +26,7 @@ export function removeKey (prefix, name) {
   })
   .then(
     resp => {
-      if (resp.status >= 200 < 300) {
+      if (resp.status >= 200 && resp.status < 300) {
         return true
       } else {
         return false

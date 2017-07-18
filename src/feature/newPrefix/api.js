@@ -9,7 +9,7 @@ export function createPrefix (prefix) {
   })
   .then(
     resp => {
-      if (resp.status >= 200 < 300) {
+      if (resp.status >= 200 && resp.status < 300) {
         return true
       } else {
         return false
