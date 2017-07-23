@@ -1,6 +1,6 @@
 # etcdeck
 
-A control deck for etcd. Works nicely with [kickerd]() as a service configuration bootstrapper and [furthermore]()'s style of key management.
+A control deck for etcd. Works nicely with [kickerd](https://github.com/arobson/kickerd) as a service configuration bootstrapper and [furthermore](https://npmjs.com/package/furthermore)'s style of key management.
 
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
@@ -136,7 +136,7 @@ This was written as a weekend project in the midst of other weekend projects. Us
  * Monitor key spaces for changes and update UI (push via sockets)
  * A mechanism to define presentation parameters per key at a prefix level
 
-[travis-url]: https://travis-ci.org/arobson/kickerd
-[travis-image]: https://travis-ci.org/arobson/kickerd.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/arobson/kickerd?branch=master
-[coveralls-image]: https://coveralls.io/repos/github/arobson/kickerd/badge.svg?branch=master
+[travis-url]: https://travis-ci.org/arobson/etcdeck
+[travis-image]: https://travis-ci.org/arobson/etcdeck.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/arobson/etcdeck?branch=master
+[coveralls-image]: https://coveralls.io/repos/github/arobson/etcdeck/badge.svg?branch=master
