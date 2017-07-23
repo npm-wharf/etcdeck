@@ -2,9 +2,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  width: 100%;
+  position: absolute;
   font-family: sans-serif;
 }
 
-.jumbotron {
-  margin: 0;
+#root {
+  height: inherit;
 }

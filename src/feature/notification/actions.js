@@ -9,11 +9,11 @@ const notificationDefaults = {
 }
 
 export function onConnectionFailure (dispatch) {
-  dispatch(notify({ header: 'Oops', body: 'Could not connect to server :(', level: 'danger' }))
+  dispatch(notify({ header: 'Oops', body: 'Could not connect to the server', level: 'danger' }))
 }
 
 export function onAPIError (dispatch) {
-  dispatch(notify({ header: "We're Sorry", body: 'A problem occurred processing your request', level: 'danger' }))
+  dispatch(notify({ header: 'Sorry', body: 'A problem occurred processing your request', level: 'danger' }))
 }
 
 export function dismissNotification (id) {

@@ -76,9 +76,6 @@ function setKey (client, prefix, key, value) {
 function watch (client, config, onChange) {
   const watcher = client.watcher(config.prefix, null, {recursive: true})
   watcher.on('change', (change) => {
-    if (applyChange(config, change) === false) {
-      change.action = 'ignore'
-    }
     onChange(change)
   })
   config.watcher = watcher

@@ -1,12 +1,12 @@
 const _ = require('fauxdash')
-module.exports = function keyResource(etcd) {
+module.exports = function keyResource (etcd) {
   return {
     name: 'key',
     actions: {
       self: {
         method: 'get',
-        url: [ '',':prefix', ':prefix/:id' ],
-        handle: ( envelope, data, next ) => {
+        url: [ '', ':prefix', ':prefix/:id' ],
+        handle: (envelope, data, next) => {
           try {
             const prefix = data.prefix
             const key = data.id
@@ -29,7 +29,7 @@ module.exports = function keyResource(etcd) {
                   e => ({ status: 500, data: e.message })
                 )
             }
-          } catch(err) {
+          } catch (err) {
             console.log(err)
             return { status: 500, data: err.message }
           }
@@ -38,7 +38,7 @@ module.exports = function keyResource(etcd) {
       'delete': {
         method: 'delete',
         url: [ ':prefix', ':prefix/:id' ],
-        handle: ( envelope, data, next ) => {
+        handle: (envelope, data, next) => {
           try {
             const prefix = data.prefix
             const key = data.id
@@ -58,7 +58,7 @@ module.exports = function keyResource(etcd) {
             } else {
               return { status: 400, data: 'Invalid request' }
             }
-          } catch(err) {
+          } catch (err) {
             console.log(err)
             return { status: 500, data: err.message }
           }
@@ -70,7 +70,7 @@ module.exports = function keyResource(etcd) {
         handle: [
           {
             when: { headers: { 'content-type': 'text/plain' } },
-            then: ( envelope, data, next ) => {
+            then: (envelope, data, next) => {
               try {
                 const prefix = envelope.params.prefix
                 const key = envelope.params.id
@@ -90,7 +90,7 @@ module.exports = function keyResource(etcd) {
                 } else {
                   return { status: 400, data: 'Invalid request' }
                 }
-              } catch(err) {
+              } catch (err) {
                 console.log(err)
                 return { status: 500, data: err.message }
               }
@@ -98,7 +98,7 @@ module.exports = function keyResource(etcd) {
           },
           {
             when: true,
-            then: ( envelope, data, next ) => {
+            then: (envelope, data, next) => {
               try {
                 const prefix = data.prefix
                 const key = data.id
@@ -121,7 +121,7 @@ module.exports = function keyResource(etcd) {
                 } else {
                   return { status: 400, data: 'Invalid request' }
                 }
-              } catch(err) {
+              } catch (err) {
                 console.log(err)
                 return { status: 500, data: err.message }
               }

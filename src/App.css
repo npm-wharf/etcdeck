@@ -1,11 +1,14 @@
-.App-header {
+.app {
+	height: inherit;
+}
+
+.header {
   padding: 0px 20px;
+
 }
 
-.App-intro {
-  font-size: large;
-}
-
-.App-main {
+.main {
   padding: 0;
+  height: inherit;
+  overflow-y: scroll;
 }

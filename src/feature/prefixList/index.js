@@ -20,7 +20,7 @@ const PrefixListView = ({ prefixes, location, history, getList, getKeys }) => {
     <Prefix name={prefix} location={location} key={prefix} />
   )
   return (
-    <div className='horizontal-list'>
+    <div className='bootstrap-vertical-nav horizontal-list'>
       <ul className='nav nav-pills flex-column'>
         {list}
       </ul>

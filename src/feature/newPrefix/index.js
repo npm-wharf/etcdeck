@@ -8,40 +8,42 @@ const NewPrefixView = ({ prefix, canAdd, change, clear, add }) => {
   const count = prefix.toString().length
   let width = count
   width = width < 20 ? 20 : width
-  return (<div className='field'>
-    <label className='field-label' htmlFor='prefix'>Prefix</label>
-    <input
-      className='small-field'
-      ref={x => { inputControl = x }}
-      size={width}
-      value={prefix}
-      onChange={
-        (e) => change(e.target.value)
-      }
-    />
-    <div className='field-buttons'>
-      <button
-        className='btn btn-default btn-sm'
-        disabled={!canAdd}
-        onClick={
-          (e) => {
-            e.preventDefault()
-            add(inputControl.value)
-          }
+  return (<section className='field-set'>
+    <div className='field'>
+      <label className='field-label' htmlFor='prefix'>Prefix</label>
+      <input
+        className='small-field'
+        ref={x => { inputControl = x }}
+        size={width}
+        value={prefix}
+        onChange={
+          (e) => change(e.target.value)
         }
-      >add</button>
-      <button
-        className='btn btn-default btn-sm'
-        disabled={!canAdd}
-        onClick={
-          (e) => {
-            e.preventDefault()
-            clear()
+      />
+      <div className='field-buttons'>
+        <button
+          className='btn btn-default btn-sm'
+          disabled={!canAdd}
+          onClick={
+            (e) => {
+              e.preventDefault()
+              add(inputControl.value)
+            }
           }
-        }
-      >reset</button>
+        >add</button>
+        <button
+          className='btn btn-default btn-sm'
+          disabled={!canAdd}
+          onClick={
+            (e) => {
+              e.preventDefault()
+              clear()
+            }
+          }
+        >reset</button>
+      </div>
     </div>
-  </div>)
+  </section>)
 }
 
 const mapStateToProps = (state, ownProps) => {

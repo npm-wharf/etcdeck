@@ -2,7 +2,6 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const compression = require('compression')
 const express = require('express')
-const path = require('path')
 const info = require('../package.json')
 
 function configure (auth, state) {
