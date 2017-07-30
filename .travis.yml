@@ -9,6 +9,7 @@ os:
   - linux
 
 before_script:
+  - npm i npm -g
   - npm i dockyard@latest
 
 script:
