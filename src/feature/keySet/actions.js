@@ -1,4 +1,4 @@
-import { onAPIError, noice } from '../notification/actions'
+import { onAPIError } from '../notification/actions'
 import { setKey, removeKey } from './api'
 
 export function changeKeyDisplayCommand (prefix, key, value) {

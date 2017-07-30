@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './style.css'
-import { connect } from 'react-redux'
 import PrefixList from '../prefixList'
 import KeySet from '../keySet'
 import NewPrefix from '../newPrefix'
