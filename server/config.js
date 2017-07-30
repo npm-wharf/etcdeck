@@ -11,7 +11,7 @@ module.exports = function (fount, express) {
     http: {
       configure: express.configure,
       postRouting: express.postRouting,
-      port: 8008,
+      port: 8018,
       apiPrefix: 'api',
       auth: {
       }

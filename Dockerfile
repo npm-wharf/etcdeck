@@ -1,4 +1,4 @@
-FROM npmjs/npm-docker-baseline:6-alpine
+FROM arobson/kickerd:latest
 
 # File Author / Maintainer
 MAINTAINER Alex Robson
@@ -15,4 +15,4 @@ RUN npm i
 
 RUN npm uninstall node-gyp -g && apk del python make g++ && rm -rf /var/cache/apk/*
 
-EXPOSE 8008
+EXPOSE 8018

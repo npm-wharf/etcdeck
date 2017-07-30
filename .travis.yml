@@ -15,7 +15,7 @@ script:
   - npm i
   - npm run build
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - dockyard build image --repo=arobson --name=etcdeck
+  - dockyard build image --repo=arobson --name=etcdeck --tags=lm
 
 node_js:
   - "6"

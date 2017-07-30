@@ -27,6 +27,8 @@ The cobbler's children have no shoes. Everything I've ever worked on would have 
 
 The travis build produces a Docker image for use in production. The only environment variable you need to set (for now) is `ETCD_URL`
 
+The port it exposes is `8018`.
+
 ## Running This For Dev
 
 The `dev.js` script will spin up both the react client process and the server process. Both _should_ pick up changes to source and restart in the background such that you really shouldn't have to think about this.
