@@ -2,7 +2,9 @@
   "name": "etcdeck",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8008",
+  "proxy": "http://localhost:8028",
+  "license": "ISC",
+  "author": "Alex Robson",
   "dependencies": {
     "body-parser": "^1.17.2",
     "bootstrap": "^4.0.0-alpha.6",
