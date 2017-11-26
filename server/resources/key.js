@@ -30,7 +30,6 @@ module.exports = function keyResource (etcd) {
                 )
             }
           } catch (err) {
-            console.log(err)
             return { status: 500, data: err.message }
           }
         }
@@ -42,7 +41,6 @@ module.exports = function keyResource (etcd) {
           try {
             const prefix = data.prefix
             const key = data.id
-            console.log(prefix, key)
             if (prefix && key) {
               return etcd.deleteKey(prefix, key)
                 .then(
@@ -59,7 +57,6 @@ module.exports = function keyResource (etcd) {
               return { status: 400, data: 'Invalid request' }
             }
           } catch (err) {
-            console.log(err)
             return { status: 500, data: err.message }
           }
         }
@@ -91,7 +88,6 @@ module.exports = function keyResource (etcd) {
                   return { status: 400, data: 'Invalid request' }
                 }
               } catch (err) {
-                console.log(err)
                 return { status: 500, data: err.message }
               }
             }
@@ -122,7 +118,6 @@ module.exports = function keyResource (etcd) {
                   return { status: 400, data: 'Invalid request' }
                 }
               } catch (err) {
-                console.log(err)
                 return { status: 500, data: err.message }
               }
             }

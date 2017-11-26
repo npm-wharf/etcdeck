@@ -1,9 +1,8 @@
 # etcdeck
 
-A control deck for etcd. Works nicely with [kickerd](https://github.com/arobson/kickerd) as a service configuration bootstrapper and [furthermore](https://npmjs.com/package/furthermore)'s style of key management.
+A control deck for etcd. Works nicely with [kickerd](https://github.com/npm-wharf/kickerd) as a service configuration bootstrapper and [furthermore](https://npmjs.com/package/furthermore)'s style of key management.
 
 [![Build Status][travis-image]][travis-url]
-[![Coverage Status][coveralls-image]][coveralls-url]
 
 ## Problem
 
@@ -27,7 +26,7 @@ The cobbler's children have no shoes. Everything I've ever worked on would have 
 
 The travis build produces a Docker image for use in production. The only environment variable you need to set (for now) is `ETCD_URL`
 
-The port it exposes is `8018`.
+The port it exposes is `8028`.
 
 ## Running This For Dev
 
@@ -138,7 +137,5 @@ This was written as a weekend project in the midst of other weekend projects. Us
  * Monitor key spaces for changes and update UI (push via sockets)
  * A mechanism to define presentation parameters per key at a prefix level
 
-[travis-url]: https://travis-ci.org/arobson/etcdeck
-[travis-image]: https://travis-ci.org/arobson/etcdeck.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/arobson/etcdeck?branch=master
-[coveralls-image]: https://coveralls.io/repos/github/arobson/etcdeck/badge.svg?branch=master
+[travis-url]: https://travis-ci.org/npm-wharf/etcdeck
+[travis-image]: https://travis-ci.org/npm-wharf/etcdeck.svg?branch=master

@@ -20,7 +20,8 @@ function deletePrefix (client, prefix) {
 function fetchConfig (client, prefix) {
   const get = _.lift(client.get.bind(client))
   return get(prefix)
-    .catch({ errorCode: 100 }, () => {
+    .catch({ errorCode: 100 }, (e) => {
+      console.log(`Error looking up config for key space '${prefix}': ${e.message}`)
       // 'Key not found' error.
       return {}
     })
@@ -30,7 +31,6 @@ function fetchConfig (client, prefix) {
           acc.push({ key: node.key.split('/')[2], value: node.value })
           return acc
         }, [])
-        console.log(list)
         list.sort((a, b) => {
           const A = a.key.toUpperCase()
           const B = b.key.toUpperCase()
@@ -41,7 +41,6 @@ function fetchConfig (client, prefix) {
           }
           return 0
         })
-        console.log(list)
         return list.reduce((acc, x) => {
           acc[x.key] = x.value
           return acc
@@ -82,6 +81,7 @@ function watch (client, config, onChange) {
 }
 
 module.exports = function (config = { etcd: { url: DEFAULT_URL } }) {
+  console.log(`Connecting to etcd at '${config.etcd.url}'`)
   const client = new Etcd(config.etcd.url)
   return {
     addPrefix: addPrefix.bind(null, client),

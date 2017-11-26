@@ -1,4 +1,4 @@
-FROM arobson/kickerd:latest
+FROM npmwharf/kickerd:latest
 
 # File Author / Maintainer
 MAINTAINER Alex Robson
@@ -15,4 +15,4 @@ RUN npm i
 
 RUN npm uninstall node-gyp -g && apk del python make g++ && rm -rf /var/cache/apk/*
 
-EXPOSE 8018
+EXPOSE 8028

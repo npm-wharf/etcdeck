@@ -10,13 +10,13 @@ os:
 
 before_script:
   - npm i npm -g
-  - npm i dockyard@latest
+  - npm i @npm-wharf/shipwright@latest
 
 script:
   - npm i
   - npm run build
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - dockyard build image --repo=arobson --name=etcdeck --tags=lm
+  - shipwright build image --repo=npmwharf --name=etcdeck --tags=lm,v,miv --cache-from-latest
 
 node_js:
-  - "6"
+  - "8"
