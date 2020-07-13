@@ -58,7 +58,7 @@
     "react-addons-test-utils": "^15.6.0",
     "sass-loader": "^6.0.6",
     "standard": "^10.0.2",
-    "standard-version": "^4.2.0"
+    "standard-version": "^8.0.1"
   },
   "standard": {
     "env": [
